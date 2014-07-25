@@ -43,13 +43,6 @@ var tests = {
     done();
   },
 
-  awesome: function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(anthart.awesome(), 'awesome', 'should be awesome.');
-    test.done();
-  },
-
   scale: function(test) {
     var dest = path.join(buildPath, 'arale.scale.png');
 
@@ -104,7 +97,7 @@ var tests = {
       shape: fs.readFileSync(shape),
       icon: fs.readFileSync(icon),
       cover: fs.readFileSync(cover)
-    }, true, 96);
+    }, true);
 
     fs.writeFileSync(smartPallet, buffer);
 
