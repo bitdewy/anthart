@@ -87,7 +87,8 @@ var tests = {
     var shape = path.join(__dirname, 'data/shape.png');
     var icon = path.join(__dirname, 'data/arale.alpha.edge.png');
     var cover = path.join(__dirname, 'data/cover.png');
-    var dest = path.join(buildPath, 'arale.composited.png');
+    var composited = path.join(buildPath, 'arale.composited.png');
+    var smartPallet = path.join(buildPath, 'arale.smartPallet.png');
 
     var buffer = anthart.compositeIcon({
       base: fs.readFileSync(base),
@@ -96,7 +97,17 @@ var tests = {
       cover: fs.readFileSync(cover)
     });
 
-    fs.writeFileSync(dest, buffer);
+    fs.writeFileSync(composited, buffer);
+
+    buffer = anthart.compositeIcon({
+      base: fs.readFileSync(base),
+      shape: fs.readFileSync(shape),
+      icon: fs.readFileSync(icon),
+      cover: fs.readFileSync(cover)
+    }, true, 96);
+
+    fs.writeFileSync(smartPallet, buffer);
+
     test.done();
   }
 };
