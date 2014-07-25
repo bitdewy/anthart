@@ -1,0 +1,42 @@
+{
+  "name": "anthart",
+  "description": "anthart",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bitdewy/anthart",
+  "author": {
+    "name": "bitdewy",
+    "email": "bitdewy@gmail.com",
+    "url": "http://bitdewy.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitdewy/anthart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitdewy/anthart/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bitdewy/anthart/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/anthart",
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.5",
+    "load-grunt-tasks": "~0.6.0",
+    "grunt-contrib-clean": "~0.5.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "canvas": "~1.1.5",
+    "mkdirp": "~0.5.0",
+    "async": "~0.9.0"
+  }
+}
