@@ -102,6 +102,34 @@ var tests = {
     fs.writeFileSync(smartPallet, buffer);
 
     test.done();
+  },
+
+  home: function(test) {
+    var wallpaper = path.join(__dirname, 'data/wallpaper.png');
+    var home = path.join(buildPath, 'home.png');
+    var buffer = anthart.home(wallpaper, require('./data/dockicons'));
+    fs.writeFileSync(home, buffer);
+    test.done();
+  },
+  drawer: function(test) {
+    var wallpaper = path.join(__dirname, 'data/wallpaper.png');
+    var drawer = path.join(buildPath, 'drawer.png');
+    var apps = require('./data/apps').icons;
+    var options = require('./data/apps').options;
+    var buffer = anthart.drawer(wallpaper, apps, options);
+    fs.writeFileSync(drawer, buffer);
+    test.done();
+  },
+  shortcuts: function(test) {
+    var wallpaper = path.join(__dirname, 'data/wallpaper.png');
+    var widgets = path.join(buildPath, 'widgets.png');
+    var dock = require('./data/dockicons');
+    var shortcuts = require('./data/shortcuts').icons;
+    var options = require('./data/shortcuts').options;
+
+    var buffer = anthart.shortcuts(wallpaper, shortcuts, dock, options);
+    fs.writeFileSync(widgets, buffer);
+    test.done();
   }
 };
 
