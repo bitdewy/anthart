@@ -11,27 +11,44 @@
 var fs = require('fs');
 var path = require('path');
 
-var icons = [
-  {
-    src: fs.readFileSync(path.join(__dirname, 'icons/com_android_contacts_com_android_contacts_activities_dialtactsactivity.png')),
-    text: 'Phone'
-  },
-  {
-    src: fs.readFileSync(path.join(__dirname, 'icons/com_android_mms_com_android_mms_ui_conversationlist.png')),
-    text: 'Messages'
-  },
-  {
-    src: fs.readFileSync(path.join(__dirname, 'icons/ic_allapps.png')),
-    text: 'Apps'
-  },
-  {
-    src: fs.readFileSync(path.join(__dirname, 'icons/com_android_camera_com_android_camera_camera.png')),
-    text: 'Camera'
-  },
-  {
-    src: fs.readFileSync(path.join(__dirname, 'icons/com_android_browser_com_android_browser_browseractivity.png')),
-    text: 'Browser'
-  },
-];
+var dock = {
+  icons: [
+    {
+      src: fs.readFileSync(path.join(__dirname, 'icons/com_android_contacts_com_android_contacts_activities_dialtactsactivity.png')),
+      text: 'Phone',
+      type: 'app_icon'
+    },
+    {
+      src: fs.readFileSync(path.join(__dirname, 'icons/com_android_mms_com_android_mms_ui_conversationlist.png')),
+      text: 'Messages',
+      type: 'app_icon'
+    },
+    {
+      src: fs.readFileSync(path.join(__dirname, 'icons/ic_allapps.png')),
+      text: 'Apps',
+      type: 'app_icon'
+    },
+    {
+      src: fs.readFileSync(path.join(__dirname, 'icons/com_android_camera_com_android_camera_camera.png')),
+      text: 'Camera',
+      type: 'app_icon'
+    },
+    {
+      src: fs.readFileSync(path.join(__dirname, 'icons/com_android_browser_com_android_browser_browseractivity.png')),
+      text: 'Browser',
+      type: 'app_icon'
+    },
+  ],
+  options: {
+    color: '#999999',
+    maskAll: false,
+    smartMask: true,
+    masking: {
+      base: fs.readFileSync(path.join(__dirname, 'base.png')),
+      shape: fs.readFileSync(path.join(__dirname, 'shape.png')),
+      cover: fs.readFileSync(path.join(__dirname, 'cover.png'))
+    }
+  }
+};
 
-exports = module.exports = icons;
+exports = module.exports = dock;

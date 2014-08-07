@@ -75,42 +75,16 @@ var tests = {
     test.done();
   },
 
-  compositeIcon: function(test) {
-    var base = path.join(__dirname, 'data/base.png');
-    var shape = path.join(__dirname, 'data/shape.png');
-    var icon = path.join(__dirname, 'data/arale.alpha.edge.png');
-    var cover = path.join(__dirname, 'data/cover.png');
-    var composited = path.join(buildPath, 'arale.composited.png');
-    var smartPallet = path.join(buildPath, 'arale.smartPallet.png');
-
-    var buffer = anthart.compositeIcon({
-      base: fs.readFileSync(base),
-      shape: fs.readFileSync(shape),
-      icon: fs.readFileSync(icon),
-      cover: fs.readFileSync(cover)
-    });
-
-    fs.writeFileSync(composited, buffer);
-
-    buffer = anthart.compositeIcon({
-      base: fs.readFileSync(base),
-      shape: fs.readFileSync(shape),
-      icon: fs.readFileSync(icon),
-      cover: fs.readFileSync(cover)
-    }, true);
-
-    fs.writeFileSync(smartPallet, buffer);
-
-    test.done();
-  },
-
   home: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
     var home = path.join(buildPath, 'home.png');
-    var buffer = anthart.home(wallpaper, require('./data/dockicons'));
+    var docks = require('./data/dockicons').icons;
+    var options = require('./data/dockicons').options;
+    var buffer = anthart.home(wallpaper, docks, options);
     fs.writeFileSync(home, buffer);
     test.done();
   },
+
   drawer: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
     var drawer = path.join(buildPath, 'drawer.png');
@@ -120,13 +94,13 @@ var tests = {
     fs.writeFileSync(drawer, buffer);
     test.done();
   },
+
   shortcuts: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
     var widgets = path.join(buildPath, 'widgets.png');
-    var dock = require('./data/dockicons');
+    var dock = require('./data/dockicons').icons;
     var shortcuts = require('./data/shortcuts').icons;
     var options = require('./data/shortcuts').options;
-
     var buffer = anthart.shortcuts(wallpaper, shortcuts, dock, options);
     fs.writeFileSync(widgets, buffer);
     test.done();
