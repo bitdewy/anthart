@@ -15,27 +15,27 @@ var dock = {
   icons: [
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_contacts_com_android_contacts_activities_dialtactsactivity.png')),
-      text: 'Phone',
+      capital: 'Phone',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_mms_com_android_mms_ui_conversationlist.png')),
-      text: 'Messages',
+      capital: 'Messages',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/ic_allapps.png')),
-      text: 'Apps',
+      capital: 'Apps',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_camera_com_android_camera_camera.png')),
-      text: 'Camera',
+      capital: 'Camera',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_browser_com_android_browser_browseractivity.png')),
-      text: 'Browser',
+      capital: 'Browser',
       type: 'app_icon'
     },
   ],

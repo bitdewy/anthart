@@ -15,22 +15,22 @@ var shortcuts = {
   icons: [
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_cyou_cma_clauncher_com_cyou_cma_beauty_center_beautycenterentrance.png')),
-      text: 'Beauty Center',
+      capital: 'Beauty Center',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_gallery3d_com_android_gallery3d_app_gallery.png')),
-      text: 'Gallery',
+      capital: 'Gallery',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_settings_com_android_settings_settings.png')),
-      text: 'Settings',
+      capital: 'Settings',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/ic_widget_diy_theme.png')),
-      text: 'DIY Theme',
+      capital: 'DIY Theme',
       type: 'app_icon'
     }
   ],

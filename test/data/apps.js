@@ -15,82 +15,82 @@ var shortcuts = {
   icons: [
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_browser_com_android_browser_browseractivity.png')),
-      text: 'Browser',
+      capital: 'Browser',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_calculator2_com_android_calculator2_calculator.png')),
-      text: 'Calculator',
+      capital: 'Calculator',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_calendar_com_android_calendar_allinoneactivity.png')),
-      text: 'Calendar',
+      capital: 'Calendar',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_camera_com_android_camera_camera.png')),
-      text: 'Camera',
+      capital: 'Camera',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_deskclock_com_android_deskclock_deskclock.png')),
-      text: 'Clock',
+      capital: 'Clock',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_contacts_com_android_contacts_activities_peopleactivity.png')),
-      text: 'Contacts',
+      capital: 'Contacts',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_providers_downloads_ui_com_android_providers_downloads_ui_downloadlist.png')),
-      text: 'Downloads',
+      capital: 'Downloads',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_email_com_android_email_activity_welcome.png')),
-      text: 'Email',
+      capital: 'Email',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_gallery3d_com_android_gallery3d_app_gallery.png')),
-      text: 'Gallery',
+      capital: 'Gallery',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_mms_com_android_mms_ui_conversationlist.png')),
-      text: 'Messaging',
+      capital: 'Messaging',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_music_com_android_music_musicbrowseractivity.png')),
-      text: 'Music',
+      capital: 'Music',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_contacts_com_android_contacts_activities_dialtactsactivity.png')),
-      text: 'Phone',
+      capital: 'Phone',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_settings_com_android_settings_settings.png')),
-      text: 'Settings',
+      capital: 'Settings',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_android_music_com_android_music_videobrowseractivity.png')),
-      text: 'Video',
+      capital: 'Video',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/com_cyou_cma_clauncher_com_cyou_cma_beauty_center_beautycenterentrance.png')),
-      text: 'Beauty Center',
+      capital: 'Beauty Center',
       type: 'app_icon'
     },
     {
       src: fs.readFileSync(path.join(__dirname, 'icons/ic_widget_diy_theme.png')),
-      text: 'DIY Theme',
+      capital: 'DIY Theme',
       type: 'app_icon'
     }
   ],
