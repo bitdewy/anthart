@@ -56,6 +56,19 @@ var tests = {
     test.done();
   },
 
+  decorate: function(test) {
+    var dest = path.join(buildPath, 'arale.decorate.png');
+
+    var buffer = anthart.decorate({
+      src: fs.readFileSync(arale),
+      width: 128,
+      height: 128
+    });
+
+    fs.writeFileSync(dest, buffer);
+    test.done();
+  },
+
   clipToFitRatio: function(test) {
     var fitWidth = path.join(buildPath, 'arale.shrikToFitWidth.png');
     var buffer = anthart.clipToFitRatio({

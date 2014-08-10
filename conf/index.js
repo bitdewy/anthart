@@ -23,6 +23,7 @@ var configure = {
   },
   frame: fs.readFileSync(path.join(__dirname, 'images/frame.png')),
   indicator: fs.readFileSync(path.join(__dirname, 'images/indicator.png')),
+  mask: fs.readFileSync(path.join(__dirname, 'images/mask.png')),
   titleBar: fs.readFileSync(path.join(__dirname, 'images/titlebar.png')),
   weather: fs.readFileSync(path.join(__dirname, 'images/weather.png')),
   commonWidget: {
