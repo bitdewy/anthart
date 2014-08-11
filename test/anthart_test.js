@@ -56,6 +56,30 @@ var tests = {
     test.done();
   },
 
+  crop: function(test) {
+    var dest = path.join(buildPath, 'arale.crop.png');
+
+    var buffer = anthart.crop({
+      src: fs.readFileSync(arale),
+      canvas: {
+        width: 128,
+        height: 128
+      },
+      topLeft: {
+        x: 0,
+        y: 0
+      },
+      bottomRight: {
+        x: 64,
+        y: 64
+      }
+    });
+
+    fs.writeFileSync(dest, buffer);
+    test.done();
+  },
+
+
   decorate: function(test) {
     var dest = path.join(buildPath, 'arale.decorate.png');
 
