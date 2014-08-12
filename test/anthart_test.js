@@ -36,6 +36,15 @@ var buildPath = path.join(__dirname, '../build');
     test.ifError(value)
 */
 
+var fn = function(test) {
+
+  var recv = function(err) {
+    test.ifError(err);
+    test.done();
+  };
+  return recv;
+};
+
 var tests = {
 
   setUp: function(done) {
@@ -52,8 +61,8 @@ var tests = {
       height: 128
     });
 
-    fs.writeFileSync(dest, buffer);
-    test.done();
+
+    fs.writeFile(dest, buffer, fn(test));
   },
 
   crop: function(test) {
@@ -75,8 +84,7 @@ var tests = {
       }
     });
 
-    fs.writeFileSync(dest, buffer);
-    test.done();
+    fs.writeFile(dest, buffer, fn(test));
   },
 
 
@@ -89,27 +97,27 @@ var tests = {
       height: 128
     });
 
-    fs.writeFileSync(dest, buffer);
-    test.done();
+    fs.writeFile(dest, buffer, fn(test));
   },
 
-  clipToFitRatio: function(test) {
+  clipToFitHeight: function(test) {
+    var fitHeight = path.join(buildPath, 'arale.shrikToFitHeight.png');
+    var buffer = anthart.clipToFitRatio({
+      src: fs.readFileSync(arale),
+      width: 63,
+      height: 125
+    });
+    fs.writeFile(fitHeight, buffer, fn(test));
+  },
+
+  clipToFitWidth: function(test) {
     var fitWidth = path.join(buildPath, 'arale.shrikToFitWidth.png');
     var buffer = anthart.clipToFitRatio({
       src: fs.readFileSync(arale),
       width: 125,
       height: 63
     });
-    fs.writeFileSync(fitWidth, buffer);
-
-    var fitHeight = path.join(buildPath, 'arale.shrikToFitHeight.png');
-    buffer = anthart.clipToFitRatio({
-      src: fs.readFileSync(arale),
-      width: 63,
-      height: 125
-    });
-    fs.writeFileSync(fitHeight, buffer);
-    test.done();
+    fs.writeFile(fitWidth, buffer, fn(test));
   },
 
   home: function(test) {
@@ -118,8 +126,7 @@ var tests = {
     var docks = require('./data/dockicons').icons;
     var options = require('./data/dockicons').options;
     var buffer = anthart.home(wallpaper, docks, options);
-    fs.writeFileSync(home, buffer);
-    test.done();
+    fs.writeFile(home, buffer, fn(test));
   },
 
   drawer: function(test) {
@@ -128,8 +135,7 @@ var tests = {
     var apps = require('./data/apps').icons;
     var options = require('./data/apps').options;
     var buffer = anthart.drawer(wallpaper, apps, options);
-    fs.writeFileSync(drawer, buffer);
-    test.done();
+    fs.writeFile(drawer, buffer, fn(test));
   },
 
   shortcuts: function(test) {
@@ -139,8 +145,7 @@ var tests = {
     var shortcuts = require('./data/shortcuts').icons;
     var options = require('./data/shortcuts').options;
     var buffer = anthart.shortcuts(wallpaper, shortcuts, dock, options);
-    fs.writeFileSync(widgets, buffer);
-    test.done();
+    fs.writeFile(widgets, buffer, fn(test));
   }
 };
 
