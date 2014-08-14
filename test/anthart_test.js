@@ -122,30 +122,33 @@ var tests = {
 
   home: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
-    var home = path.join(buildPath, 'home.png');
+    var home = fs.createWriteStream(path.join(buildPath, 'home.jpg'));
     var docks = require('./data/dockicons').icons;
     var options = require('./data/dockicons').options;
-    var buffer = anthart.home(wallpaper, docks, options);
-    fs.writeFile(home, buffer, fn(test));
+    var stream = anthart.home(wallpaper, docks, options);
+    stream.pipe(home);
+    home.on('close', fn(test));
   },
 
   drawer: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
-    var drawer = path.join(buildPath, 'drawer.png');
+    var drawer = fs.createWriteStream(path.join(buildPath, 'drawer.jpg'));
     var apps = require('./data/apps').icons;
     var options = require('./data/apps').options;
-    var buffer = anthart.drawer(wallpaper, apps, options);
-    fs.writeFile(drawer, buffer, fn(test));
+    var stream = anthart.drawer(wallpaper, apps, options);
+    stream.pipe(drawer);
+    drawer.on('close', fn(test));
   },
 
   shortcuts: function(test) {
     var wallpaper = path.join(__dirname, 'data/wallpaper.png');
-    var widgets = path.join(buildPath, 'widgets.png');
+    var widgets = fs.createWriteStream(path.join(buildPath, 'widgets.png'));
     var dock = require('./data/dockicons').icons;
     var shortcuts = require('./data/shortcuts').icons;
     var options = require('./data/shortcuts').options;
-    var buffer = anthart.shortcuts(wallpaper, shortcuts, dock, options);
-    fs.writeFile(widgets, buffer, fn(test));
+    var stream = anthart.shortcuts(wallpaper, shortcuts, dock, options);
+    stream.pipe(widgets);
+    widgets.on('close', fn(test));
   }
 };
 
