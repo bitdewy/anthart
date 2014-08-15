@@ -58,7 +58,12 @@ var tests = {
     var buffer = anthart.scale({
       src: fs.readFileSync(arale),
       width: 128,
-      height: 128
+      height: 128,
+      exif: {
+        image: {
+          Orientation: 1
+        }
+      }
     });
 
 
@@ -81,6 +86,11 @@ var tests = {
       bottomRight: {
         x: 64,
         y: 64
+      },
+      exif: {
+        image: {
+          Orientation: 6
+        }
       }
     });
 
@@ -105,7 +115,12 @@ var tests = {
     var buffer = anthart.clipToFitRatio({
       src: fs.readFileSync(arale),
       width: 63,
-      height: 125
+      height: 125,
+      exif: {
+        image: {
+          Orientation: 3
+        }
+      }
     });
     fs.writeFile(fitHeight, buffer, fn(test));
   },
@@ -115,7 +130,12 @@ var tests = {
     var buffer = anthart.clipToFitRatio({
       src: fs.readFileSync(arale),
       width: 125,
-      height: 63
+      height: 63,
+      exif: {
+        image: {
+          Orientation: 8
+        }
+      }
     });
     fs.writeFile(fitWidth, buffer, fn(test));
   },
