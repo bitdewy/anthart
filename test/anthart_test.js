@@ -14,7 +14,7 @@ var path = require('path');
 var anthart = require('../lib/anthart');
 
 var arale = path.join(__dirname, 'data/arale.png');
-
+var baby = path.join(__dirname, 'data/baby.jpg');
 var buildPath = path.join(__dirname, '../build');
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -56,18 +56,44 @@ var tests = {
     var dest = path.join(buildPath, 'arale.scale.png');
 
     var buffer = anthart.scale({
-      src: fs.readFileSync(arale),
-      width: 128,
-      height: 128,
+      src: fs.readFileSync(baby),
+      width: 1200,
+      height: 1440,
       exif: {
         image: {
-          Orientation: 1
+          Orientation: 1,
+          ImageWidth: 1280,
+          ImageHeight: 960
         }
       }
     });
 
 
     fs.writeFile(dest, buffer, fn(test));
+  },
+
+  scaleToJpegStream: function(test) {
+    var dest = fs.createWriteStream(path.join(buildPath, 'baby.scale.jpg'));
+
+    var stream = anthart.scaleToJpegStream({
+      src: fs.readFileSync(baby),
+      width: 1440,
+      height: 1200
+    });
+    stream.pipe(dest);
+    dest.on('close', fn(test));
+  },
+
+  scaleToPngStream: function(test) {
+    var dest = fs.createWriteStream(path.join(buildPath, 'baby.scale.png'));
+
+    var stream = anthart.scaleToPngStream({
+      src: fs.readFileSync(baby),
+      width: 190,
+      height: 337
+    });
+    stream.pipe(dest);
+    dest.on('close', fn(test));
   },
 
   crop: function(test) {
@@ -89,7 +115,9 @@ var tests = {
       },
       exif: {
         image: {
-          Orientation: 6
+          Orientation: 6,
+          ImageWidth: 250,
+          ImageHeight: 250
         }
       }
     });
@@ -118,7 +146,9 @@ var tests = {
       height: 125,
       exif: {
         image: {
-          Orientation: 3
+          Orientation: 3,
+          ImageWidth: 250,
+          ImageHeight: 250
         }
       }
     });
@@ -128,12 +158,14 @@ var tests = {
   clipToFitWidth: function(test) {
     var fitWidth = path.join(buildPath, 'arale.shrikToFitWidth.png');
     var buffer = anthart.clipToFitRatio({
-      src: fs.readFileSync(arale),
-      width: 125,
-      height: 63,
+      src: fs.readFileSync(baby),
+      width: 1440,
+      height: 1200,
       exif: {
         image: {
-          Orientation: 8
+          Orientation: 8,
+          ImageWidth: 1280,
+          ImageHeight: 960
         }
       }
     });
