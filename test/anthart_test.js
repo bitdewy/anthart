@@ -61,9 +61,11 @@ var tests = {
       height: 1440,
       exif: {
         image: {
-          Orientation: 1,
-          ImageWidth: 1280,
-          ImageHeight: 960
+          Orientation: 1
+        },
+        exif: {
+          ExifImageWidth: 1280,
+          ExifImageHeight: 960
         }
       }
     });
@@ -115,9 +117,11 @@ var tests = {
       },
       exif: {
         image: {
-          Orientation: 6,
-          ImageWidth: 250,
-          ImageHeight: 250
+          Orientation: 6
+        },
+        exif: {
+          ExifImageWidth: 250,
+          ExifImageHeight: 250
         }
       }
     });
@@ -146,9 +150,11 @@ var tests = {
       height: 125,
       exif: {
         image: {
-          Orientation: 3,
-          ImageWidth: 250,
-          ImageHeight: 250
+          Orientation: 3
+        },
+        exif: {
+          ExifImageWidth: 250,
+          ExifImageHeight: 250
         }
       }
     });
@@ -163,9 +169,11 @@ var tests = {
       height: 1200,
       exif: {
         image: {
-          Orientation: 8,
-          ImageWidth: 1280,
-          ImageHeight: 960
+          Orientation: 8
+        },
+        exif: {
+          ExifImageWidth: 1280,
+          ExifImageHeight: 960
         }
       }
     });
