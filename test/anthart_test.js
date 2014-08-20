@@ -62,10 +62,6 @@ var tests = {
       exif: {
         image: {
           Orientation: 1
-        },
-        exif: {
-          ExifImageWidth: 1280,
-          ExifImageHeight: 960
         }
       }
     });
@@ -118,10 +114,6 @@ var tests = {
       exif: {
         image: {
           Orientation: 6
-        },
-        exif: {
-          ExifImageWidth: 250,
-          ExifImageHeight: 250
         }
       }
     });
@@ -151,10 +143,6 @@ var tests = {
       exif: {
         image: {
           Orientation: 3
-        },
-        exif: {
-          ExifImageWidth: 250,
-          ExifImageHeight: 250
         }
       }
     });
@@ -170,10 +158,6 @@ var tests = {
       exif: {
         image: {
           Orientation: 8
-        },
-        exif: {
-          ExifImageWidth: 1280,
-          ExifImageHeight: 960
         }
       }
     });
